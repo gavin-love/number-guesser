@@ -1,9 +1,14 @@
-
 var formInput = document.querySelector(".input");
 var submitBtn = document.querySelector(".guess-btn");
 var clearBtn = document.querySelector(".clear-btn");
 var resetBtn = document.querySelector(".reset-btn");
-var randomNumber = Math.floor(Math.random() * 101);
+var belowRange = 0;
+var aboveRange = 101;
+var min = 1;
+var max = 100;
+var placeholderMin = -9
+var placeholderMax = 110
+var randomNumber = Math.floor(Math.random() * (max - min) + min);
 console.log(randomNumber);
 
 submitBtn.addEventListener('click', getNumber);
@@ -11,39 +16,30 @@ resetBtn.addEventListener('click', resetGame);
 clearBtn.addEventListener('click', clearInput);
 formInput.addEventListener('keyup', enableButtons);
 
-
-
-
 function  getNumber() {
+  var displayNmbr = document.querySelector(".number-display");
 
   isGuessANumber();
+  displayNmbr.innerHTML = formInput.value;
   formInput.focus();
 };
 
-// function resetGame() {
-// }
-
-// function clearInput() {
-// }
-
 function isGuessANumber() {
-  var displayNmbr = document.querySelector(".number-display");
   var guessDetails = document.querySelector(".guess-details-display");
 
   if (isNaN(formInput.value)) {
-    displayNmbr.innerHTML = "NaN";
-    guessDetails.innerHTML = "not a number";
+    guessDetails.innerHTML = "not a number"
   } else {
-    isGuessInRange()
+    isGuessInRange(belowRange,aboveRange)
   }
 };
 
-function isGuessInRange() {
+function isGuessInRange(belowRange,aboveRange) {
   var guessDetails = document.querySelector(".guess-details-display");
 
-  if (formInput.value <= 0) {
+  if (formInput.value <= belowRange) {
     guessDetails.innerHTML = "below the accepted range"
-  } else if (formInput.value >= 101) {
+  } else if (formInput.value >= aboveRange) {
     guessDetails.innerHTML = "above the accepted range"
   } else {
     isGuessToHighToLow()
@@ -52,14 +48,35 @@ function isGuessInRange() {
 
 function isGuessToHighToLow() {
   var guessDetails = document.querySelector(".guess-details-display");
+  var lastGuessText = document.querySelector(".last-guess-text")
 
   if (formInput.value < randomNumber) {
     guessDetails.innerHTML = "TOO LOW!"
   } else if (formInput.value > randomNumber) {
     guessDetails.innerHTML = "TOO HI!"
   } else {
-    guessDetails.innerHTML = "OH SNAP!"
+    lastGuessText.innerHTML = "the range is now " + placeholderMin + " to " + placeholderMax;
+    guessDetails.innerHTML = "WINNER!";
+    formInput.placeholder = "Guess a number between " + placeholderMin + " and " + placeholderMax;
+    levelUp(); 
   }
+
+};
+
+function levelUp() {
+  placeholderMin = placeholderMin-10;
+  placeholderMax = placeholderMax+10;
+  belowRange = belowRange-10;
+  aboveRange = aboveRange+10;
+  min = min-10;
+  max = max+10;
+
+  generateRandomNumber(min,max)
+};
+
+function generateRandomNumber(min,max) {
+   randomNumber = Math.floor(Math.random() * (max - min) + min);
+   console.log(randomNumber);
 };
 
 function enableButtons() {
@@ -81,12 +98,16 @@ function disableButtons() {
 };
 
 function clearInput() {
+  var lastGuessText = document.querySelector(".last-guess-text")
+  var guessDetails = document.querySelector(".guess-details-display");
+
+  lastGuessText.innerHTML = "Your last guess was"
   formInput.value = '';
-  disableButtons()
+  formInput.focus();
+  disableButtons();
 };
 
 function resetGame() {
   location.reload();
 };
-
 
