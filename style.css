@@ -35,30 +35,36 @@ html, body {
   display: block;
   width: 98%}
 
-.guess-btn,
-.clear-btn {
+.guess-button,
+.clear-button {
   padding: 0;
   width: 46%;
 }
 
-.guess-btn {
-  margin-right: 10px;
+.guess-button,
+.choose-min {
+  margin-right: 12px;
 }
 
-.clear-btn {
-  margin-left: 10px;
+.clear-button,
+.choose-max {
+  margin-left: 12px;
 }
 
-.reset-btn {
+.reset-button {
   width: 100%;
 }
 
-.btn-color {
+.button-color {
     background-color: #929497;
 }
 
-.btn-color:hover {
+.button-color:hover {
   background-color: #EB008B;
+}
+
+.class:disabled {
+  
 }
 
 .number-color {
@@ -67,4 +73,14 @@ html, body {
 
 .number-display {
   color: #D83189;
+}
+
+.cyoa-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.cyoa-input {
+  width: 45%;
 }

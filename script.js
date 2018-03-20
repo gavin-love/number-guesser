@@ -1,7 +1,8 @@
 var formInput = document.querySelector(".input");
-var submitBtn = document.querySelector(".guess-btn");
-var clearBtn = document.querySelector(".clear-btn");
-var resetBtn = document.querySelector(".reset-btn");
+var submitBtn = document.querySelector(".guess-button");
+var clearBtn = document.querySelector(".clear-button");
+var resetBtn = document.querySelector(".reset-button");
+var enableBtns = document.querySelectorAll(".enable-buttons")
 var belowRange = 0;
 var aboveRange = 101;
 var min = 1;
@@ -34,7 +35,7 @@ function isGuessANumber() {
   }
 };
 
-function isGuessInRange(belowRange,aboveRange) {
+function isGuessInRange() {
   var guessDetails = document.querySelector(".guess-details-display");
 
   if (formInput.value <= belowRange) {
@@ -80,15 +81,13 @@ function generateRandomNumber(min,max) {
 };
 
 function enableButtons() {
+  for (i = 0; i < enableBtns.length; i++) {
 
-  if (formInput.value === '') {
-    submitBtn.disabled = true
-    clearBtn.disabled = true
-    resetBtn.disabled = true
-    } else {
-    submitBtn.disabled = false
-    clearBtn.disabled = false
-    resetBtn.disabled = false
+    if (formInput.value === '') {
+      enableBtns[i].disabled = true
+      } else {
+      enableBtns[i].disabled = false
+    }
   } 
 };
 
