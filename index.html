@@ -13,9 +13,12 @@
   </header>
   <main class="main">
     <section>
-      <input class="input" type="text" placeholder="Let's play a game! Guess a number between 1 and 100.">
-      <input class="guess-btn btn-color" type="submit" value="Guess" disabled>     
-      <input class="clear-btn btn-color" type="submit" value="Clear" disabled>     
+      <input class="input" type="text" placeholder="Guess a number between 1 and 100.">
+      <input class="guess-button button-color enable-buttons" type="submit" value="Guess" disabled>     
+      <input class="clear-button button-color enable-buttons" type="submit" value="Clear" disabled>
+      <input class="choose-min cyoa-input " type="text" placeholder="Choose a Minimum.">
+      <input class="choose-max cyoa-input " type="text" placeholder="Choose a Maximum.">
+      <input class="cyoa-button button-color" type="submit" value="Guess" disabled>   
     </section>
     <section>
       <p class="last-guess-text">Your last guess was</p>
@@ -24,7 +27,7 @@
     </section>
   </main>
   <footer class="footer">
-    <input class="reset-btn btn-color" type="submit" value="Reset" disabled>
+    <input class="reset-button button-color enable-buttons" type="submit" value="Reset" disabled>
   </footer>
 <script type="text/javascript" src="script.js"></script>
 </body>
