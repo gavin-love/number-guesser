@@ -2,6 +2,10 @@ mainGame();
 
 function mainGame() {
 
+  alert(
+  '1. The goal is to guess the random number.\n2. The range starts out at 1 to 100.\n3. Everytime you win the minimum range extends by -10.\n4. Everytime you win the Maximum range extends by +10.\n5. After winning the game 3 times you will enter a bonus game.\n6. Choose your own range to start the bonus game.\n7. Repeat steps 1 through 4 starting with the custom range you entered.\n8. After winning the custom game 3 times you win the game.'
+  );
+
   var formInput = document.querySelector(".input");
   var submitBtn = document.querySelector(".guess-button");
   var clearBtn = document.querySelector(".clear-button");
@@ -108,7 +112,6 @@ function mainGame() {
     var lastGuessText = document.querySelector(".last-guess-text");
     var guessDetails = document.querySelector(".guess-details-display");
 
-    // lastGuessText.innerHTML = "Your last guess was"
     formInput.value = '';
     formInput.focus();
     disableButtons();
@@ -120,6 +123,11 @@ function mainGame() {
 };
 
 function customGame() {
+
+    alert(
+  '1. The goal is to guess the random number.\n2. The range starts out at 1 to 100.\n3. Everytime you win the minimum range extends by -10.\n4. Everytime you win the Maximum range extends by +10.\n5. After winning the game 3 times you will enter a bonus game.\n6. Choose your own range to start the bonus game.\n7. Repeat steps 1 through 4 starting with the custom range you entered.\n8. After winning the custom game 3 times you win the game.'
+  );
+    
   var formInput = document.querySelector(".input");
   var customMinInput = document.querySelector(".custom-min-input");
   var customMaxInput = document.querySelector(".custom-max-input");
@@ -135,7 +143,6 @@ function customGame() {
   var min = 0;
   var max = 0;
   var wins = 0;
-
 
   submitBtn.addEventListener('click', getNewNumber);
   resetBtn.addEventListener('click', resetGame);
@@ -243,7 +250,6 @@ function customGame() {
       formInput.value = "YES"
     }
   };
-
 
   function generateRandomNumber(min,max) {
     randomNumber = Math.floor(Math.random() * (max - min) + min);

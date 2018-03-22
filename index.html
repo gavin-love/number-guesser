@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>NumberGuesser</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,800" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,13 +12,19 @@
     <h1 class="title-one">Number</h1>
     <h1 class="title-two">Guesser</h1>
   </header>
-  <main class="main">
-    <input class="input height" type="text" placeholder="Guess a number between 1 and 100.">
-    <input class="guess-button button-color enable-buttons border-radius height button-font" type="submit" value="Guess" disabled>     
-    <input class="clear-button button-color enable-buttons border-radius height button-font" type="submit" value="Clear" disabled>
-    <input class="choose-min custom-min-input hidden-display height" type="text" placeholder="Choose a Minimum." style="display: none">
+  <main class="main" aria-live="polite">
+    <label for="input-numeric-guess" name="input numeric guess">
+    <input class="input height" type="text" id="input-numeric-guess" placeholder="Guess a number between 1 and 100.">
+    <label for="submit-numeric-guess" name="submit numeric guess">
+    <input class="guess-button button-color enable-buttons border-radius height button-font" id="submit-numeric-guess" type="submit" value="Guess" disabled>
+    <label for="clear-input-field" name="clear input field">     
+    <input class="clear-button button-color enable-buttons border-radius height button-font" id="clear-input-field" type="submit" value="Clear" disabled>
+    <label for="choose-custom-minimun-range" name="choose custom minimun range">
+    <input class="choose-min custom-min-input hidden-display height" id="choose-custom-minimun-range" type="text" placeholder="Choose a Minimum." style="display: none">
+    <label for="choose-custom-maximun-range" name="choose custom minimun range">
     <input class="choose-max custom-max-input hidden-display height" type="text" placeholder="Choose a Maximum." style="display: none">
-    <input class="custom-range-submit-button width-100 button-color hidden-display border-radius2 height button-font" type="submit" value="Choose your own range" disabled style="display: none">    
+    <label for="submit-custom-range" name="submit custom range">
+    <input class="custom-range-submit-button width-100 button-color hidden-display border-radius2 height button-font" id="submit-custom-range" type="submit" value="Choose your own range" disabled style="display: none">    
     <p class="last-guess-text">Your last guess was</p>
     <p class="number-display">#</p>   
     <p class="guess-details-display">&nbsp</p>
