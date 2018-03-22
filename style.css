@@ -1,7 +1,12 @@
+* {
+  font-family: raleway;
+  font-weight: light 300;
+}
+
 html, body {
-  width: 100%;
-  margin: 0;
   box-sizing: border-box;
+  margin: 0;
+  width: 100%;
 }
 
 input::placeholder {
@@ -10,8 +15,8 @@ input::placeholder {
 
 .header {
   background-color: #404041;
-  width: 100%;
   text-align: center;
+  width: 100%;
 }
 
 .title-one {
@@ -25,20 +30,22 @@ input::placeholder {
 .title-one,
 .title-two {
   display: inline-block;
-  margin: 0;
   font-size: 8.9em;
+  margin: 0;
+  line-height: 1;
 }
 
 .main {
-  width: 50%;
   margin: auto;
   text-align: center;
+  width: 50%;
 }
 
 .input {
-  width: 99%;
   font-size: 1.5em;
+  width: 99%;
 }
+
 .input,
 .choose-min,
 .choose-max {
@@ -122,6 +129,14 @@ input::placeholder {
 .last-guess-text,
 .guess-details-display {
   font-size: 2em;
+}
+
+.last-guess-text {
+  margin-bottom: 0;
+}
+
+.guess-details-display {
+  margin-top: 0;
 }
 
 .number-display {
