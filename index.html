@@ -12,23 +12,17 @@
     <h1 class="title-two">Guesser</h1>
   </header>
   <main class="main">
-    <section>
-      <input class="input" type="text" placeholder="Guess a number between 1 and 100.">
-      <input class="guess-button button-color enable-buttons" type="submit" value="Guess" disabled>     
-      <input class="clear-button button-color enable-buttons" type="submit" value="Clear" disabled>
-      <input class="choose-min cyoa-inputs hidden-display" type="text" placeholder="Choose a Minimum." style="display: none">
-      <input class="choose-max cyoa-inputs hidden-display" type="text" placeholder="Choose a Maximum." style="display: none">
-      <input class="cyoa-button button-color hidden-display" type="submit" value="Choose your own range" disabled style="display: none">   
-    </section>
-    <section>
-      <p class="last-guess-text">Your last guess was</p>
-      <p class="number-display">#</p>
-      <p class="guess-details-display">&nbsp</p>
-    </section>
+    <input class="input height" type="text" placeholder="Guess a number between 1 and 100.">
+    <input class="guess-button button-color enable-buttons border-radius height button-font" type="submit" value="Guess" disabled>     
+    <input class="clear-button button-color enable-buttons border-radius height button-font" type="submit" value="Clear" disabled>
+    <input class="choose-min custom-min-input hidden-display height" type="text" placeholder="Choose a Minimum." style="display: none">
+    <input class="choose-max custom-max-input hidden-display height" type="text" placeholder="Choose a Maximum." style="display: none">
+    <input class="custom-range-submit-button width-100 button-color hidden-display border-radius2 height button-font" type="submit" value="Choose your own range" disabled style="display: none">    
+    <p class="last-guess-text">Your last guess was</p>
+    <p class="number-display">#</p>   
+    <p class="guess-details-display">&nbsp</p>
+    <input class="reset-button width-100 button-color enable-buttons border-radius2 height button-font" type="submit" value="Reset" disabled>
   </main>
-  <footer class="footer">
-    <input class="reset-button button-color enable-buttons" type="submit" value="Reset" disabled>
-  </footer>
-<script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

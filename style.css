@@ -4,8 +4,14 @@ html, body {
   box-sizing: border-box;
 }
 
+input::placeholder {
+  font-size: 1.2em;
+}
+
 .header {
   background-color: #404041;
+  width: 100%;
+  text-align: center;
 }
 
 .title-one {
@@ -20,67 +26,107 @@ html, body {
 .title-two {
   display: inline-block;
   margin: 0;
-  font-size: 2.9em;
+  font-size: 8.9em;
 }
 
-.main,
-.header,
-.footer {
+.main {
   width: 50%;
   margin: auto;
   text-align: center;
 }
 
 .input {
-  display: block;
-  width: 98%}
-
-.guess-button,
-.clear-button {
-  padding: 0;
-  width: 46%;
+  width: 99%;
+  font-size: 1.5em;
 }
-
-.guess-button,
-.choose-min {
-  margin-right: 12px;
-}
-
-.clear-button,
+.input,
+.choose-min,
 .choose-max {
-  margin-left: 12px;
+  margin: 40px 0 40px 0;
+}
+.width-100 {
+  width: 100%;
+}
+
+.guess-button,
+.clear-button,
+.choose-min,
+.choose-max {
+  padding: 0;
+  width: 45%;
+}
+
+.choose-min {
+  margin-right: 4%;
+}
+
+.choose-max {
+  margin-left: 4%;
+}
+
+.choose-min,
+.choose-max {
+  font-size: 1.5em;
+}
+
+.choose-min:placeholder,
+.choose-max:placholder{
+  font-size: 1.5em;
+}
+
+.guess-button {
+  margin-right: 4.65%;
+}
+
+.clear-button {
+  margin-left: 4.65%;
 }
 
 .reset-button {
-  width: 100%;
+  margin-bottom: 80px;
+}
+
+.height {
+  height: 50px;
+}
+
+.border-radius {
+  border-radius: 5%/50%;
+}
+
+.border-radius2 {
+  border-radius: 2%/50%;
+}
+
+.button-font {
+  font-size: 1.8em;
 }
 
 .button-color {
     background-color: #929497;
+    color: #FFF
 }
 
 .button-color:hover {
   background-color: #EB008B;
 }
 
-.class:disabled {
-  
+.button-color:disabled {
+  background-color: #D0D2D3;
 }
 
 .number-color {
   color: #EB008B;
 }
 
+.last-guess-text,
+.guess-details-display {
+  font-size: 2em;
+}
+
 .number-display {
   color: #D83189;
+  font-size: 15em;
+  margin: 0;
 }
 
-.cyoa-button {
-  display: block;
-  width: 100%;
-  text-align: center;
-}
-
-.cyoa-inputs {
-  width: 45%;
-}
